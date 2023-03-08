@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.final_project.fragment.Fragment1;
+import com.example.final_project.fragment.BillFragment;
 import com.example.final_project.fragment.Fragment2;
 import com.example.final_project.fragment.Fragment3;
 
@@ -19,7 +19,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new Fragment1();
+                return new BillFragment();
             case 1:
                 return new Fragment2();
             case 2:
