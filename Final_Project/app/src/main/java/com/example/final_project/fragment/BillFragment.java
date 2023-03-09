@@ -1,10 +1,19 @@
 package com.example.final_project.fragment;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -41,6 +50,7 @@ public class BillFragment extends Fragment {
         spnRoomStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //todo: filter theo từng status ở đây
                 Toast.makeText(view.getContext(), statusAdapter.getItem(position).statusName, Toast.LENGTH_SHORT).show();
             }
 
@@ -49,6 +59,31 @@ public class BillFragment extends Fragment {
 
             }
         });
+
+        ImageButton addViewBtn = view.findViewById(R.id.add_bill_btn);
+        addViewBtn.setOnClickListener(button -> {
+            openAddBillDialog(view);
+        });
+
+    }
+
+
+    private void openAddBillDialog(View view) {
+        Dialog billDialog = new Dialog(view.getContext());
+        billDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        billDialog.setContentView(R.layout.bill_dialog);
+
+        Window window = billDialog.getWindow();
+        if(window == null) {
+            return;
+        }
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        WindowManager.LayoutParams winLayoutParams = window.getAttributes();
+        winLayoutParams.gravity = Gravity.CENTER;
+        window.setAttributes(winLayoutParams);
+        billDialog.show();
     }
 
     private List<RoomStatus> getListStatus() {

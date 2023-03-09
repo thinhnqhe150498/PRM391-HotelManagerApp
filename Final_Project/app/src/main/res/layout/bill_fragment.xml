@@ -19,28 +19,39 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bill"
-            android:textSize="25sp"
+            android:paddingStart="15dp"
             android:paddingEnd="120dp"
-            android:paddingStart="15dp"/>
+            android:text="Bill"
+            android:textSize="25sp" />
 
         <Spinner
             android:id="@+id/spinner_status_hd"
             android:layout_width="228dp"
             android:layout_height="45dp"
             android:layout_marginEnd="15dp"
-            android:gravity="center"/>
+            android:gravity="center" />
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_hoa_don"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="345dp"
+            android:layout_height="550dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="15dp" />
+
+        <ImageButton
+            android:id="@+id/add_bill_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="500dp"
+            android:src="@drawable/add_circle_24" />
     </LinearLayout>
 
 </LinearLayout>
