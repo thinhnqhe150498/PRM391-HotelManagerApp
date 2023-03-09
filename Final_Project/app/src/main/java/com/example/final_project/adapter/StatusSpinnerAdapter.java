@@ -33,7 +33,6 @@ public class StatusSpinnerAdapter extends ArrayAdapter<RoomStatus> {
             tvStatusSelected.setText(roomStatus.statusName);
         }
         return convertView;
-//        return super.getView(position, convertView, parent);
     }
 
     @Override
