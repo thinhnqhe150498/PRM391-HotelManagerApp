@@ -6,8 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.final_project.fragment.BillFragment;
-import com.example.final_project.fragment.Fragment2;
-import com.example.final_project.fragment.Fragment3;
+import com.example.final_project.fragment.CustomerFragment;
+import com.example.final_project.fragment.ServiceFragment;
+import com.example.final_project.fragment.RoomFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
@@ -21,16 +22,18 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new BillFragment();
             case 1:
-                return new Fragment2();
+                return new ServiceFragment();
             case 2:
+                return new RoomFragment();
+            case 3:
             default:
-                return new Fragment3();
+                return new CustomerFragment();
 
         }
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

@@ -40,9 +40,12 @@ public class MainActivity extends AppCompatActivity {
                         bottomNavigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
                         break;
                     case 1:
-                        bottomNavigationView.getMenu().findItem(R.id.nav_room).setChecked(true);
+                        bottomNavigationView.getMenu().findItem(R.id.nav_service).setChecked(true);
                         break;
                     case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.nav_room).setChecked(true);
+                        break;
+                    case 3:
                     default:
                         bottomNavigationView.getMenu().findItem(R.id.nav_customer).setChecked(true);
                         break;
@@ -60,12 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_home:
                     viewPager.setCurrentItem(0);
                     break;
-                case R.id.nav_room:
+                case R.id.nav_service:
                     viewPager.setCurrentItem(1);
+                    break;
+                case R.id.nav_room:
+                    viewPager.setCurrentItem(2);
                     break;
                 case R.id.nav_customer:
                 default:
-                    viewPager.setCurrentItem(2);
+                    viewPager.setCurrentItem(3);
                     break;
             }
             return true;
